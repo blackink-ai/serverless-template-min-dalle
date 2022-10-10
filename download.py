@@ -8,13 +8,13 @@ import torch
 
 
 def download_model():
-    model = MinDalle(
-        models_root='./pretrained',
-        dtype=torch.float32,
-        device='cpu',
-        is_mega=True,
-        is_reusable=True
-    )
+  model = MinDalle(
+    models_root='./pretrained',
+    dtype=torch.float32,
+    device='cpu',
+    is_mega=True,
+    is_reusable=True
+  )
 
 if __name__ == "__main__":
-    download_model()
+  download_model()

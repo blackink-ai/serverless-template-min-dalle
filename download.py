@@ -3,11 +3,18 @@
 
 # In this example: A Huggingface BERT model
 
-from transformers import pipeline
+from min_dalle import MinDalle
+import torch
+
 
 def download_model():
-    # do a dry run of loading the huggingface model, which will download weights
-    pipeline('fill-mask', model='bert-base-uncased')
+    model = MinDalle(
+        models_root='./pretrained',
+        dtype=torch.float32,
+        device='cpu',
+        is_mega=True,
+        is_reusable=True
+    )
 
 if __name__ == "__main__":
     download_model()

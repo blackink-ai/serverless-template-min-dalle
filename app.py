@@ -52,7 +52,7 @@ def inference(model_inputs:dict) -> dict:
 
   for raw_image in images.to('cpu').numpy():
     buffered = BytesIO()
-    image = Image.fromarray(raw_image)
+    image = Image.fromarray((raw_image * 255).astype(np.uint8))
     image.save(buffered, format="PNG")
     image_base64 = base64.b64encode(buffered.getvalue()).decode('utf-8')
     result["images_base64"].append(image_base64)

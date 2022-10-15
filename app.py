@@ -10,13 +10,7 @@ def init():
   global model
 
   device = "cuda" if torch.cuda.is_available() else "cpu"
-  model = MinDalle(
-    models_root='./pretrained',
-    dtype=torch.float32,
-    device=device,
-    is_mega=True,
-    is_reusable=True
-  )
+  model = MinDalle(models_root='./pretrained', dtype=torch.float32, device=device, is_mega=True, is_reusable=True)
 
 # Inference is ran for every server call
 # Reference your preloaded global model variable here.
